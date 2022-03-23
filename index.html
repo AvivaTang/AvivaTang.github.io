@@ -2,7 +2,13 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a class="current" href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li><li> <a href="/about">About</a></li><li> <a href="/links">Links</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/WechatIMG1270.jpeg" style="width:200px;" alt="favicon"><h3 title=""><a href="/">AvivaTang</a></h3><div class="description"><p>AvivaTang's life</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/AvivaTang"><i class="fa fa-github"></i></a></li><li><a href="mailto:10182100106@stu.ecnu.edu.cn"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/tql-5"><i class="fa fa-mortar-board"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> </span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2022/03/22/math/">Anything about CV 👀</a></h3></div><div class="post-content"><div class="card"><p><p><strong>假设你拥有一个训练好的 KNN 模型，在训练集中有 N 个样本，训练和预测的时间复杂度 分别是多少?</strong></p>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.1"></head><body><div class="page-top animated fadeInDown"><div class="nav"><li> <a class="current" href="/">Home</a></li><li> <a href="/archives">Archives</a></li><li> <a href="/tags">Tags</a></li><li> <a href="/about">About</a></li><li> <a href="/links">Links</a></li></div><div class="information"><div class="nav_right_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li><li><a class="fa fa-search" onclick="openWindow();"></a></li></div><div class="avatar"><img src="/images/logo.webp"></div></div></div><div class="sidebar animated fadeInDown"><div class="sidebar-top"><div class="logo-title"><div class="title"><img src="/images/WechatIMG1270.jpeg" style="width:200px;" alt="favicon"><h3 title=""><a href="/">AvivaTang</a></h3><div class="description"><p>AvivaTang's life</p></div></div><ul class="social-links"><li><a target="_blank" rel="noopener" href="https://github.com/AvivaTang"><i class="fa fa-github"></i></a></li><li><a href="mailto:10182100106@stu.ecnu.edu.cn"><i class="fa fa-envelope"></i></a></li><li><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/tql-5"><i class="fa fa-mortar-board"></i></a></li></ul></div></div><div class="footer"><div class="p"> <span> 全站CC-BY-SA-3.0 </span><i class="fa fa-star"></i><span> </span></div><div class="by_farbox"><span>Powered by </span><a href="https://hexo.io/zh-cn/" target="_blank">Hexo </a><span> & </span><span>Anatolo </span></div><div class="beian"></div></div></div><div class="main"><div class="autopagerize_page_element"><div class="content"><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2022/03/22/math/">Anything about AI 👀</a></h3></div><div class="post-content"><div class="card"><p><p><strong>机器学习的原理</strong></p>
+<p>就比如说性别分类吧，机器学习通过训练数据的特征（比如人的身高体重）和数据的输出变量（如人的性别）来训练一个分类或者回归模型，用这个模型来预测新的数据。<br>梯度下降和线性回归！！！前者是优化方法（用于nn中后向传播的参数更新）后者是分类方法，用于前向传播得到输出值。</p>
+<p><strong>回归和分类的区别</strong></p>
+<p>回归常用来预测一个连续值比如说预测今天我被lamda录取的概率，分类常用来预测一个离散值比如说贴标签。</p>
+<p><strong>为什么需要激活函数</strong></p>
+<p>激活函数可以使输出值与输入值变得非线性（不使用激活函数的话深度神经网络实际上和多层感知机就没区别了，全是线性组合），可微且单调（当优化方法是基于梯度的时候这个性质就是必须的），同时激活函数还能控制输出值范围，使得基于梯度的优化方法变得更稳定。</p>
+<p><strong>假设你拥有一个训练好的 KNN 模型，在训练集中有 N 个样本，训练和预测的时间复杂度 分别是多少?</strong></p>
 <p>KNN在训练阶段不参与任何实质性的模型训练，算法的训练阶段仅包括存储训练样本的特征向量和类别标签。但在测试阶段需要跟每一个样本做距离的计算。假如有N个样本，而且每个样本的特征为D维的向量。首先对于任何一个目标样本，为了做预测需要循环所有的训练样本，这个复杂度为O(N)。另外，当我们计算两个样本之间距离的时候，这个复杂度就依赖于样本的特征维度，复杂度为O(D)。把循环样本的过程看做是外层循环，计算样本之间距离看作是内层循环，所以总的复杂度为它俩的乘积，也就是O(ND)。如果不考虑特征维度的粒度，则为O(N)​。</p>
 <p><strong>考虑一个 SVM 分类器，加大数据量是否一定导致 SVM 分类器的决策边界改变?为什么?</strong></p>
 <p>不一定</p>
@@ -10,12 +16,19 @@
 <li>加入的数据不一定正确，如果增加大量错误数据反而会降低SVM准确率。</li>
 <li>如果加入数据后不改变支持向量集合或者正好落在原超平面上，那对SVM准确率无影响。</li>
 </ol>
-<p><strong>在反向传播的过程中，梯度流经过诸如 Sigmoid 的等非线性层时， 它的符号不会改变。（判断题）</strong></p>
-<p>错误，对于sigmoid函数来说，sigmoid公式为：<br>$$<br>g(z)=\displaystyle \frac{1}{1+e^{-z}}​<br>$$<br>导数<br>$$<br>\displaystyle \frac{dg(z)}{dz}=\displaystyle \frac{e^{-z}}{(1+e^{-z})^2}=\displaystyle \frac{1+e^{-z}-1}{(1+e^{-z})^2}=\frac{1}{1+e^{-z}}-\frac{1}{(1+e^{-z})^2}=g(z)-(g(z))^2=g(z)(1-g(z))<br>$$<br>因为sigmoid的值域在0-1之间，所以局部梯度不会为负数，也即不会改变流经sigmoid层梯度的符号。</p>
-<p>但对于ReLU函数前向传播时的输入x大于0，就将x传入下一层，如果x小于等于0就将0传入下一层。</p>
-<p>反向传播时，当输⼊为负数时，ReLU函数的导数为0，当输⼊为正数时，ReLU函数的导数为1。</p>
-<p>所以ReLU激活函数的局部梯度可能为0，与上游梯度相乘，可以原本的正负梯度变成0，也即符号会发生改变。</p>
-</p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-03-22</span><i class="fa fa-tag"></i><span class="leancloud_visitors"></span><span>About 654 words, 2 min 10 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2022/03/22/Skiing/">Skiing🎿 HAVE FUN!!!</a></h3></div><div class="post-content"><div class="card"><p><p>有次在b站看到李沐发了一条动态，他说他曾面过一个小哥，名校phd毕业，他问小哥有没有过大想法，小哥说了几个都不满意，最后说：讲个技术不相关的，我小时候看滑雪比赛觉得很厉害，后来努力练习拿冬奥会银牌了，这个算不算大？李沐说很震撼，这是他面过的几百个人里面对这个问题回答最有novelty的。</p>
+<p><strong>什么是凸优化（最优化）</strong></p>
+<p>凸优化的使用条件：</p>
+<ol>
+<li><p>目标函数是凸函数（也就是任意两点连线上的值大于对应自变量处的函数值） </p>
+</li>
+<li><p>变量所属集合是凸集合（也就是任意两个元素连线上的点也在集合中）<br>凸优化问题中局部最优解就等于全局最优解，凸优化应用到机器学习领域主要是用来调整和更新参数</p>
+</li>
+</ol>
+<p><strong>什么是大数定律（LAMDA）先通俗讲再举例</strong></p>
+<p>大数定律通俗一点来讲，就是样本数量很大的时候，<strong>样本均值</strong>和<strong>数学期望</strong>充分接近，也就是说当我们大量重复某一相同的实验的时候，其最后的实验结果可能会稳定在某一数值附近。就像抛硬币一样，当我们不断地抛，抛个上千次，甚至上万次，我们会发现，正面或者反面向上的次数都会接近一半，也就是这<strong>上万次的样本均值</strong>会越来越接近<strong>50%这个真实均值</strong>，<strong>随机事件的频率</strong>近似于它的<strong>概率</strong>。</p>
+<p><strong>什么是中心极限定理</strong></p>
+<p>中心极限定理是说当样本数量无穷大的时候，<strong>样本均值的分布</strong>呈现<strong>正态分布</strong>（边说边比划正态曲线）<br>大数定律和中心极限定理的区别：<br>前者更关注的是<strong>样本均值</strong>，后者关注的是<strong>样本均值的分布</strong>，比如说掷色子吧，假设一轮掷色子n次，重复了m轮，当n足够大，大数定律指出这n次的均值等于随机变量的数学期望，而中心极限定理指出这m轮的均值分布符合围绕数学期望的正态分布。</p>
+</p></div></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-03-22</span><i class="fa fa-tag"></i><a class="tag" href="/tags/AI-CV-NLP/" title="AI CV NLP">AI CV NLP </a><span class="leancloud_visitors"></span><span>About 1212 words, 4 min 2 sec  read</span></div></div></div></div><div class="post animated fadeInDown"><div class="post-title"><h3><a href="/2022/03/22/Skiing/">Skiing🎿 HAVE FUN!!!</a></h3></div><div class="post-content"><div class="card"><p><p>有次在b站看到李沐发了一条动态，他说他曾面过一个小哥，名校phd毕业，他问小哥有没有过大想法，小哥说了几个都不满意，最后说：讲个技术不相关的，我小时候看滑雪比赛觉得很厉害，后来努力练习拿冬奥会银牌了，这个算不算大？李沐说很震撼，这是他面过的几百个人里面对这个问题回答最有novelty的。</p>
 <p>在刚刚过去的奥运会期间，天才少女谷爱凌，也带火了滑雪这项运动。天呐，滑雪真的这么有趣吗？我也突发奇想想去尝试一下滑雪运动。</p>
 <p>心动不如行动。那就出发吧！</p>
 <p><img src="images/22.jpeg"></p>
